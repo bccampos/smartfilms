@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FluentResults" Version="3.15.2" />
+    <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="11.5.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\building blocks\bruno.CatalogFilms.API.Core\bruno.CatalogFilms.API.Core.csproj" />
+    <ProjectReference Include="..\bruno.CatalogFilms.Domain\bruno.CatalogFilms.Domain.csproj" />
+    <ProjectReference Include="..\bruno.CatalogFilms.Contract\bruno.CatalogFilms.Contracts.csproj" />
+  </ItemGroup>
+
+</Project>

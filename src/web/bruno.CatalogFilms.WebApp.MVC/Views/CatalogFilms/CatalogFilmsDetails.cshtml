@@ -1,0 +1,59 @@
+﻿@model CatalogFilmsViewModel
+@inject IAspNetUser AppUser
+@using bruno.CatalogFilms.API.Core.User;
+@{
+    ViewData["Title"] = Model.Name;
+}
+
+<section class="section-content padding-y bg container">
+    <div class="card">
+        <div class="row no-gutters">
+            <aside class="col-md-6">
+                <article class="gallery-wrap">
+                    <div class="img-big-wrap" style="text-align: center">
+                        <img src="~/images/films/@Model.Image" alt="@Model.Name">
+                    </div>
+                </article>
+            </aside>
+            <main class="col-md-6 border-left">
+                <article class="content-body">
+
+                    <h2 class="title">@Model.Name</h2>
+
+                    <div class="rating-wrap my-3">
+                        <ul class="rating-stars">
+                            <li style="width: 80%" class="stars-active">
+                                <i class="fa fa-star"></i> <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i> <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                            </li>
+                            <li>
+                                <i class="fa fa-star"></i> <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i> <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                            </li>
+                        </ul>
+                        <small class="label-rating text-muted">132 reviews</small>  @*Add this field in DB*@
+                    </div>
+                    <h5>@Model.Description</h5><br />
+                    <p>Producer: @Model.Producer</p>
+                    <hr>
+                    <a href="javascript:void(0)" class="btn btn-warning" data-toggle="modal" data-target="#catalogModal">Edit <i class="fa fa-edit"></i> </a>
+                    
+                    <form method="post" asp-controller="CatalogFilms" asp-action="RemoveCatalogFilm">
+
+                        <input type="hidden" id="CatalogFilmId" name="CatalogFilmId" value="@Model.Id" />
+                        <button type="submit" class="btn btn-danger">
+                            Remove <i class="fas fa-trash-alt"> </i>
+                        </button>
+                    </form>
+                    <a asp-action="Index" class="btn  btn-info">
+                        <span class="text">Go Back</span>
+                    </a>
+                </article>
+            </main>
+        </div>
+    </div>
+</section>
+
+<partial name="_UpdateCatalogFilm" />

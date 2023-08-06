@@ -1,0 +1,59 @@
+﻿@model IEnumerable<CatalogFilmsViewModel>
+@using bruno.CatalogFilms.API.Core.User;
+@inject IAspNetUser AppUser
+@{
+    ViewData["Title"] = "Catalog Films";
+}
+
+<section>
+    <div>
+        <div style="background-image: url(images/banners/Template.jpg); height: 100%; background-position: center; background-repeat: no-repeat; background-size: cover">
+            <div style="text-align: center;">
+                <img src="~/images/banners/nerdstore.png" />
+            </div>
+        </div>
+        <br />
+        @if (AppUser.IsAuthenticated())
+        {
+            <a asp-controller="CatalogFilms" asp-action="AddCatalogFilmPage">
+                <button type="submit" class="btn btn-info">
+                    Add Film <i class="fas fa-plus"> </i>
+                </button>
+            </a>
+        }
+        <div class="container" style=" padding-top: 20px">
+            <div class="row">
+                @{
+                    foreach (var catalog in Model.OrderBy(p => p.Name))
+                    {
+                        <div class="col-md-3">
+                            <div href="#" class="card card-product-grid">
+                                <a asp-controller="CatalogFilms" asp-action="CatalogFilmsDetails" asp-route-id="@catalog.Id" class="img-wrap">
+                                    <img src="~/images/films/@catalog.Image" alt="@catalog.Name">
+                                </a>
+                                <figcaption class="info-wrap">
+                                    <a asp-controller="CatalogFilms" asp-action="CatalogFilmsDetails" asp-route-id="@catalog.Id" class="title">
+                                        <b> @catalog.Name</b>
+                                    </a>
+
+                                    <small class="card-text">
+                                        @catalog.Description
+                                    </small>
+                                </figcaption>
+                            </div>
+                        </div>
+                    }
+                }
+            </div>
+        </div>
+    </div>
+</section>
+
+
+@section Scripts {
+
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+
+}
