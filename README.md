@@ -37,6 +37,9 @@ Also you will need to startup 3 projects (MVC / API / Identity.API)
 ### Before authentication
 ![image](https://github.com/bccampos/smartfilms/assets/36283909/6d43bfeb-7a55-4f89-ab51-b9b441029396)
 
+### Login
+![image](https://github.com/bccampos/smartfilms/assets/36283909/cf3d87d5-bcc8-4b06-b23a-a793af1d4545)
+
 ### After authentication
 ![image](https://github.com/bccampos/smartfilms/assets/36283909/24503782-aec8-4dcf-ba59-108bdc348221)
 
