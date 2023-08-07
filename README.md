@@ -26,7 +26,7 @@ Also you will need to startup 3 projects (MVC / API / Identity.API)
 ![image](https://github.com/bccampos/smartfilms/assets/36283909/bc38301b-4e9e-4209-8669-b6697a6b8701)
 
 ## Swagger Catalog Films API ( with authorized configurated ) 
-![image](https://github.com/bccampos/smartfilms/assets/36283909/1bef95ee-87da-4624-b3f3-2037cf52a9cd)
+![image](https://github.com/bccampos/smartfilms/assets/36283909/6c9bbd20-a5a3-46e3-b74f-65eb6cbef748)
 
 ## Swagger Identity API 
 ![image](https://github.com/bccampos/smartfilms/assets/36283909/ffaf846a-0bae-442b-9640-8ed5805fcc42)
